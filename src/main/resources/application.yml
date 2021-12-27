@@ -1,0 +1,17 @@
+server:
+  port: 9091
+
+
+logging:
+  level:
+    - com.tianqi: debug
+    - ch: debug
+spring:
+  boot:
+    admin:
+      notify:
+        dingtalk:
+          enabled: true
+          webhook-url:
+          secret:
+          message: 服务#{instance.getRegistration().getName()}状态变更：#{event.getStatusInfo().getStatus()}

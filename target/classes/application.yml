@@ -1,0 +1,17 @@
+server:
+  port: 9091
+
+
+logging:
+  level:
+    - com.tianqi: debug
+    - ch: debug
+spring:
+  boot:
+    admin:
+      notify:
+        dingtalk:
+          enabled: true
+          webhook-url: https://oapi.dingtalk.com/robot/send?access_token=f04fd5d8b6b231d7055eb371ed0fdc9009f9b7ba9f061593ed90b58f57994a17
+          secret: SEC1c3924057560664b73c1c3936588450b91c5d133f131e5bf777014045c9a3677
+          message: 服务#{instance.getRegistration().getName()}状态变更：#{event.getStatusInfo().getStatus()}
